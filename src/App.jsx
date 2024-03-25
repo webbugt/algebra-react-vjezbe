@@ -4,25 +4,22 @@ const plaviStil = {
   fontWeight: "bold",
 };
 
-function GreenTitle(props) {
+function GreenTitle({ className, title = "Zeleni naslov" }) {
   return (
-    <div className={props.className}>
-      <h1
-        style={{
-          ...plaviStil,
-          color: "green",
-          background: "yellow",
-        }}
-      >
-        {props.title}
-      </h1>
-    </div>
+    <h1
+      className={className}
+      style={{
+        ...plaviStil,
+        color: "green",
+        background: "yellow",
+      }}
+    >
+      {title}
+    </h1>
   );
 }
 
-function BlueSubtitle(props) {
-  const { title = "plavi subtitle", className } = props;
-
+function BlueSubtitle({ title = "plavi subtitle", className }) {
   return (
     <h2 className={className} style={plaviStil}>
       {title}
@@ -33,15 +30,19 @@ function BlueSubtitle(props) {
 const defaultCatImageUrl =
   "https://t4.ftcdn.net/jpg/00/97/58/97/360_F_97589769_t45CqXyzjz0KXwoBZT9PRaWGHRk5hQqQ.jpg";
 
-function CatImage({ src = defaultCatImageUrl, className, width=200 }) {
-  return <img className={className} src={src} alt="Cat" title="Mačak" width={width+"px"} />;
+function CatImage({ src = defaultCatImageUrl, className, width = 200 }) {
+  return (
+    <img
+      className={className}
+      src={src}
+      alt="Cat"
+      title="Mačak"
+      width={width + "px"}
+    />
+  );
 }
 
-function Calculation(props) {
-  // brojevi za zbrojiti
-  const x = props.x;
-  const y = props.y;
-
+function Calculation({ x, y }) {
   return (
     <p>
       a + b = {x} + {y} = {x + y}
@@ -67,7 +68,6 @@ function App() {
         className="maca2 narancasta"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRv4XycGdx5_m1P2W0bMG1xqcpA7kucbaULP8Kx2TGBQ&s"
         width={400}
-
       />
 
       <Calculation x={42} y={18} />
