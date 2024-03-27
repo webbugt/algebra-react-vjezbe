@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from "./components/Header.jsx";
+import { Onama } from "./routes/Onama.jsx";
+import { Kontakt } from "./routes/Kontakt.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,21 +13,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/onama",
-    element: (
-      <div>
-        <Header />
-        <h1>O nama</h1>
-      </div>
-    ),
+    element: <Onama />,
   },
   {
     path: "/kontakt",
-    element: (
-      <div>
-        <Header />
-        <h1>Kontakt</h1>
-      </div>
-    ),
+    element: <Kontakt />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
