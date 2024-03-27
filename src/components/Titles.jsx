@@ -27,5 +27,12 @@ function BlueSubtitle({ title = "plavi subtitle", className }) {
   );
 }
 
+function FancyTitle({title,subtitle}){
+  return <div>
+    {!!title && <GreenTitle title={title}/>}
+    {!!subtitle && <BlueSubtitle title={subtitle}/>}
+  </div>
+}
 
-export { GreenTitle, BlueSubtitle }
+
+export { GreenTitle, BlueSubtitle, FancyTitle }
