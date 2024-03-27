@@ -28,6 +28,11 @@ function BlueSubtitle({ title = "plavi subtitle", className }) {
 }
 
 function FancyTitle({title,subtitle}){
+  
+  if(!title && !subtitle){
+    return null
+  }
+  
   return <div className="fancyTitle" style={{
     padding: 5,
     border: "solid green 1px"
