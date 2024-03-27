@@ -1,6 +1,5 @@
-import Calculation from "./components/Calculation";
-import CatImage from "./components/image/CatImage";
-import { BlueSubtitle, GreenTitle } from "./components/Titles";
+
+import { BlueSubtitle, GreenTitle, CatImage, Calculation } from "./components";
 
 // funkcionalna komponenta
 function App() {
