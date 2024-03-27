@@ -1,4 +1,5 @@
 import Calculation from "./components/Calculation";
+import Header from "./components/Header";
 import CatImage from "./components/image/CatImage";
 import { BlueSubtitle, GreenTitle } from "./components/Titles";
 
@@ -6,6 +7,7 @@ import { BlueSubtitle, GreenTitle } from "./components/Titles";
 function App() {
   return (
     <div>
+      <Header />
       <GreenTitle
         title="Naslov iz App komponente"
         className="nekaKlasa zeleni tekst"
