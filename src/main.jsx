@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Header from './components/Header.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,11 +22,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <header>
-      <a href="/">Naslovna</a>
-      <a href="/onama">O nama</a>
-      <a href="/kontakt">Kontakt</a>
-    </header>
+    <Header />
     <RouterProvider router={router}/>
   </React.StrictMode>,
 )
