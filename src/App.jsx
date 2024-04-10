@@ -12,7 +12,7 @@ function App() {
       <GreenTitle title="Vrijednost iz parent komponente"/>
       <br />
       <BlueSubtitle title="I'm blue dabudedadbabdab" />
-      <BlueSubtitle />
+      <BlueSubtitle title="mora biti prisutan" />
 
       <CatImage className="maca1" />
 

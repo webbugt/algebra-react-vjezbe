@@ -32,12 +32,21 @@ GreenTitle.defaultProps = {
 }
 
 
-function BlueSubtitle({ title = "plavi subtitle", className }) {
+function BlueSubtitle({ title, className }) {
   return (
     <h2 className={className} style={plaviStil}>
       {title}
     </h2>
   );
+}
+
+BlueSubtitle.propTypes = {
+  title: propTypes.string.isRequired,
+  className: propTypes.string
+}
+
+BlueSubtitle.defaultProps = {
+  className: undefined
 }
 
 function FancyTitle({title,subtitle}){
