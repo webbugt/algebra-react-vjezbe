@@ -1,22 +1,26 @@
-import propTypes from 'prop-types'
-import {useState} from 'react'
+import propTypes from "prop-types";
+import { useState } from "react";
 
-function KomponentaSaStanjem({ nekiNaslov }){
-    const [count] = useState(10)
+function KomponentaSaStanjem({ nekiNaslov }) {
+  const [count,setCount] = useState(10);
 
-    return <span>
-        {nekiNaslov}
-        <h2>Trenutno stanje: {count}</h2>
-        {/* <h2>{staticnoStanje.count}</h2> */}
+  console.log({count, setCount})
+
+  return (
+    <span>
+      {nekiNaslov}
+      <h2>Trenutno stanje: {count}</h2>
+      {/* <h2>{staticnoStanje.count}</h2> */}
     </span>
+  );
 }
 
 KomponentaSaStanjem.propTypes = {
-    nekiNaslov: propTypes.string
-}
+  nekiNaslov: propTypes.string,
+};
 
 KomponentaSaStanjem.defaultProps = {
-    nekiNaslov: "opća vrijednost nekiNaslov propa"
-}
+  nekiNaslov: "opća vrijednost nekiNaslov propa",
+};
 
-export default KomponentaSaStanjem
+export default KomponentaSaStanjem;
