@@ -1,4 +1,4 @@
-import proptTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 function KomponentaSaStanjem({}){
     
