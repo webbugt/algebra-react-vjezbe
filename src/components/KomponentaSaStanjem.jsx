@@ -25,6 +25,11 @@ function KomponentaSaStanjem({ nekiNaslov, initialCount }) {
       }} >
         Postavi tekst 1
       </button>
+      <button onClick={()=>{
+        setContent("Tekst 2: sad je HRT")
+      }} >
+        Postavi tekst 2
+      </button>
 
     </div>
   );
