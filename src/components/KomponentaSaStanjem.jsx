@@ -12,7 +12,13 @@ function KomponentaSaStanjem({ nekiNaslov, initialCount }) {
       <h2>Trenutno stanje: {count}</h2>
       <BlueSubtitle title={content} />
       <button onClick={()=>{
+        // modifikacija stanja kada ovisimo o prethodnom
+        // koristi se funkcija koja uzima prethodno stanje i vrača novo
         setCount(previousValue => previousValue + 1)
+        // verbosniji način zapisa istog
+        // setCount(function(previousValue){
+        //     return previousValue + 1
+        // })
       }}> Dodaj jedan na count </button>
     </div>
   );
