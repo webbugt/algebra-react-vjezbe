@@ -26,7 +26,10 @@ GreenTitle.propTypes = {
   title: propTypes.string
 }
 
-GreenTitle.defaultProps = {}
+GreenTitle.defaultProps = {
+  className: undefined,
+  title: "Default title"
+}
 
 
 function BlueSubtitle({ title = "plavi subtitle", className }) {

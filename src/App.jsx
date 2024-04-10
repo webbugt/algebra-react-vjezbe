@@ -9,10 +9,7 @@ function App() {
   return (
     <div>
       <Header />
-      <GreenTitle
-        title="Hello World"
-        className="nekaKlasa ze<leni tekst"
-      />
+      <GreenTitle title="Vrijednost iz parent komponente"/>
       <br />
       <BlueSubtitle title="I'm blue dabudedadbabdab" />
       <BlueSubtitle />
