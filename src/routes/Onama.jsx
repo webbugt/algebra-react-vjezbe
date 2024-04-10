@@ -1,4 +1,5 @@
 import Header from "../components/Header.jsx";
+import KomponentaSaStanjem from "../components/KomponentaSaStanjem.jsx";
 import { FancyTitle } from "../components/Titles.jsx";
 
 export function Onama() {
@@ -9,10 +10,8 @@ export function Onama() {
         title="O nama" 
         subtitle="Hello" 
       />
-      {/* nema ga, vrati null jer ne4ma ni title ni subtitle */}
-      <FancyTitle /> 
 
-      <FancyTitle subtitle="samo sub" />
+      <KomponentaSaStanjem />
     </div>
   );
 }
