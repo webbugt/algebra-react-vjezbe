@@ -1,3 +1,5 @@
+import propTypes from 'prop-types'
+
 const plaviStil = {
   color: "blue",
   textDecoration: "underline",
@@ -19,7 +21,12 @@ function GreenTitle({ className, title = "Zeleni naslov" }) {
   );
 }
 
+GreenTitle.propTypes = {
+  className: propTypes.string,
+  title: propTypes.string
+}
 
+GreenTitle.defaultProps = {}
 
 
 function BlueSubtitle({ title = "plavi subtitle", className }) {

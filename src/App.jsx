@@ -5,11 +5,12 @@ import { BlueSubtitle, GreenTitle } from "./components/Titles";
 
 // funkcionalna komponenta
 function App() {
+  console.log("App render")
   return (
     <div>
       <Header />
       <GreenTitle
-        title={{hellp:"world"}}
+        title="Hello World"
         className="nekaKlasa ze<leni tekst"
       />
       <br />
