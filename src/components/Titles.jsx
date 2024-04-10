@@ -14,10 +14,13 @@ function GreenTitle({ className, title = "Zeleni naslov" }) {
         background: "yellow",
       }}
     >
-      {title}
+      {title.toString()}
     </h1>
   );
 }
+
+
+
 
 function BlueSubtitle({ title = "plavi subtitle", className }) {
   return (

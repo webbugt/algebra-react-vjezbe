@@ -9,8 +9,8 @@ function App() {
     <div>
       <Header />
       <GreenTitle
-        title="Naslov iz App komponente"
-        className="nekaKlasa zeleni tekst"
+        title={{hellp:"world"}}
+        className="nekaKlasa ze<leni tekst"
       />
       <br />
       <BlueSubtitle title="I'm blue dabudedadbabdab" />
