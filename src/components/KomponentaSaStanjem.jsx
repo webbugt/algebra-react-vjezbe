@@ -6,14 +6,15 @@ function KomponentaSaStanjem({ nekiNaslov, initialCount }) {
   const [count,setCount] = useState(initialCount);
   const [content,setContent] = useState("bilo što kao inicijalna vrijednost")
 
-console.log(setContent)
-
   return (
-    <span>
+    <div style={{border:"solid red 2px"}}>
       {nekiNaslov}
       <h2>Trenutno stanje: {count}</h2>
       <BlueSubtitle title={content} />
-    </span>
+      <button onClick={()=>{
+        setCount(previousValue => previousValue + 1)
+      }}> Dodaj jedan na count </button>
+    </div>
   );
 }
 
