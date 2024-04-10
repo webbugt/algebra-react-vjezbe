@@ -20,6 +20,12 @@ function KomponentaSaStanjem({ nekiNaslov, initialCount }) {
         //     return previousValue + 1
         // })
       }}> Dodaj jedan na count </button>
+      <button onClick={()=>{
+        setContent("Tekst 1: pisao Pero Perić")
+      }} >
+        Postavi tekst 1
+      </button>
+
     </div>
   );
 }
