@@ -11,7 +11,7 @@ export function Onama() {
         subtitle="Hello" 
       />
 
-      <KomponentaSaStanjem />
+      <KomponentaSaStanjem nekiNaslov="Naslov iz O nama" />
     </div>
   );
 }
