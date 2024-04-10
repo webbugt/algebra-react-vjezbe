@@ -1,19 +1,25 @@
-function EventButton() {
+import propTypes from 'prop-types'
+
+function EventButton({ onChange }) {
+
   const handleClick = () => {
-    console.log("onclick event");
+    if(typeof onChange === "function") onChange("onclick")
+    // console.log("onclick event");
   };
 
   const handleMouseOver = () => {
-    console.log("onmouseover event");
+    if(typeof onChange === "function") onChange("onmouseover")
+    // console.log("onmouseover event");
   };
 
   const handleMouseLeave = () => {
-    console.log("mouseleave event")
+    if(typeof onChange === "function") onChange("onmouseleave")
+    // console.log("mouseleave event")
   }
 
-  
   const handleMouseEnter = () => {
-    console.log("mouseenter event")
+    if(typeof onChange === "function") onChange("onmouseenter")
+    // console.log("mouseenter event")
   }
 
   return <button 
@@ -22,6 +28,14 @@ function EventButton() {
         onMouseLeave={handleMouseLeave}
         onMouseEnter={handleMouseEnter}
     >Click me!</button>;
+}
+
+EventButton.propTypes = {
+    onChange: propTypes.func
+}
+
+EventButton.propTypes = {
+    onChange: ()=>{}
 }
 
 export default EventButton;
