@@ -11,7 +11,8 @@ export function Onama() {
         subtitle="Hello" 
       />
 
-      <KomponentaSaStanjem nekiNaslov="Naslov iz O nama" />
+      <KomponentaSaStanjem nekiNaslov="Neki drugi naslov za Stanje" initialCount={20} />
+      <KomponentaSaStanjem nekiNaslov="Naslov iz O nama" initialCount={-50} />
     </div>
   );
 }
