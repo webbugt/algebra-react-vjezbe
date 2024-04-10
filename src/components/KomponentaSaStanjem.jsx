@@ -6,10 +6,16 @@ function KomponentaSaStanjem({ nekiNaslov, initialCount }) {
   const [count,setCount] = useState(initialCount);
   const [content,setContent] = useState("bilo što kao inicijalna vrijednost")
 
+  const [location,setLocation] = useState({
+    city: "Zagreb",
+    country: "Croatia"
+  })
+
   return (
-    <div style={{border:"solid red 2px"}}>
+    <div style={{border:"solid yellow 2px"}}>
       {nekiNaslov}
       <h2>Trenutno stanje: {count}</h2>
+      <p> Grad: {location.city}, Država: {location.country}</p>
       <BlueSubtitle title={content} />
       <button onClick={()=>{
         // modifikacija stanja kada ovisimo o prethodnom
@@ -29,6 +35,11 @@ function KomponentaSaStanjem({ nekiNaslov, initialCount }) {
         setContent("Tekst 2: sad je HRT")
       }} >
         Postavi tekst 2
+      </button>
+      <button onClick={()=>{
+        setLocation({ city:"Amsterdam", country:"Nizozemska" })
+      }} >
+        Promijeni Lokaciju
       </button>
 
     </div>
