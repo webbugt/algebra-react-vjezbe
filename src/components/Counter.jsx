@@ -1,4 +1,5 @@
 import { useState } from "react";
+import propTypes from 'prop-types'
 
 export function Counter({ initial }) {
   const [count, setCount] = useState(initial);
@@ -27,4 +28,11 @@ export function Counter({ initial }) {
       Oduzmi 1
     </button>
   </div>;
+}
+
+Counter.propTypes = {
+  initial: propTypes.number
+}
+Counter.defaultProps = {
+  initial: 0
 }
