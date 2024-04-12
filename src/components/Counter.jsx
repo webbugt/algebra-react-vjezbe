@@ -4,7 +4,13 @@ import propTypes from 'prop-types'
 const COUNTER_KEY = "counter-value"
 
 export function Counter({ initial }) {
-  const [count, setCount] = useState(initial);
+  const [count, setCount] = useState(()=>{
+    const localStorageValue = window.localStorage.getItem(COUNTER_KEY)
+    if(localStorageValue !== null){
+      return parseInt(localStorageValue)
+    }
+    return initial
+  });
   console.log("counter se rerenderao", count);
 
   const addOne = () => {
@@ -17,12 +23,9 @@ export function Counter({ initial }) {
     // })
   };
 
-  useEffect(
-    ()=>{
+  useEffect(()=>{
       window.localStorage.setItem(COUNTER_KEY,String(count))
-    },
-    [count]
-  )
+    },[count])
 
   const removeOne = () => {
     setCount(previousValue => previousValue - 1);
