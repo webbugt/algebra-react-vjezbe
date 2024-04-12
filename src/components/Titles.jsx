@@ -33,6 +33,7 @@ GreenTitle.defaultProps = {
 
 
 function BlueSubtitle({ title, className }) {
+  console.log(`BlueSubtitle rerendered ${title}`)
   return (
     <h2 className={className} style={plaviStil}>
       {title}
