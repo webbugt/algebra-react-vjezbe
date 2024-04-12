@@ -4,6 +4,7 @@ import EventButton from "../components/EventButton.jsx";
 import Header from "../components/Header.jsx";
 import { GreenTitle } from "../components/Titles.jsx";
 import LifecycleDemo from "../components/LifecycleDemo.jsx";
+import { Counter } from "../components/Counter.jsx";
 
 export function Kontakt() {
 
@@ -20,6 +21,7 @@ export function Kontakt() {
       <GreenTitle title={lastState} />
       <LifecycleDemo />
       <EventButton onChange={buttonChangeHandler}/>
+      <Counter initial={24}/>
     </div>
   );
 }
