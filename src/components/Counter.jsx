@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import propTypes from 'prop-types'
+
+const COUNTER_KEY = "counter-value"
 
 export function Counter({ initial }) {
   const [count, setCount] = useState(initial);
@@ -14,6 +16,13 @@ export function Counter({ initial }) {
     //     return previousValue + 1
     // })
   };
+
+  useEffect(
+    ()=>{
+      window.localStorage.setItem(COUNTER_KEY,String(count))
+    },
+    [count]
+  )
 
   const removeOne = () => {
     setCount(previousValue => previousValue - 1);
