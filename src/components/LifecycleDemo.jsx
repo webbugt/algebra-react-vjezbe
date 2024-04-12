@@ -15,9 +15,13 @@ function LifecycleDemo(){
     //     ()=>{}, // callback funkcija koja se pokrece
     //     [] // niz dependencija
     // )
-    
+
     useEffect(()=>{
         log("mounted") // useEffect bez dependencija odgovara mount/unmount naše komponente
+        return () => {
+            // unutar destroy funkcije možemo počistiti stanje između rendera ili prije unmounta
+            log("unmount")
+        }
     },[])
 
     if(!uvijet){ 
