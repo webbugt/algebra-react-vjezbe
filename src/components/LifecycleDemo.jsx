@@ -1,11 +1,11 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 
 const log = (...rest) => {
     console.log("[Lifecycle Demo]:",...rest)
 }
 
-const uvijet = false
+const uvijet = true
 
 function LifecycleDemo(){
 
@@ -20,9 +20,19 @@ function LifecycleDemo(){
         log("mounted") // useEffect bez dependencija odgovara mount/unmount naše komponente
         return () => {
             // unutar destroy funkcije možemo počistiti stanje između rendera ili prije unmounta
-            log("unmount")
+            log("destoryFn","unmount")
         }
     },[])
+
+    const [count,setCount] = useState(0)
+
+    useEffect(()=>{
+        log("count changed",count)
+        return () => {
+            log("destoryFn","count before change",count)
+        }
+    },[count])
+
 
     if(!uvijet){ 
         // null ne znači da se naša komponenta nije pokrenula
@@ -31,10 +41,12 @@ function LifecycleDemo(){
     }
     
 
-    return <h1>
+    return <h4 onClick={()=>{
+        setCount(count+1)
+    }}>
 
-    demo lifecycle
-    </h1>
+        demo lifecycle {count}
+    </h4>
 }
 
 export default LifecycleDemo
