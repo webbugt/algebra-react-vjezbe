@@ -7,8 +7,15 @@ function ParentBezStanja({ nekiNaslov, initialCount, id }) {
   // tijelo koponente - pokrece se na svaki rerender
   console.log(`KomponentaSaStanjem ${id} se renderala`);
   return (
-    <div style={{ border: "solid yellow 2px" }}>
-      {nekiNaslov}
+    <div
+      style={{
+        padding: 10,
+        border: "solid 1px rgba(0,0,0,.5)",
+        margin: "10px",
+        display: "inline-block"
+      }}
+    >
+      <h3>{nekiNaslov}</h3>
       <Counter initial={initialCount} />
       <TitleWithState />
       <LocationDisplay />
