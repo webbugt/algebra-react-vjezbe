@@ -12,7 +12,9 @@ function ParentBezStanja({ nekiNaslov, initialCount, id }) {
         padding: 10,
         border: "solid 1px rgba(0,0,0,.5)",
         margin: "10px",
-        display: "inline-block"
+        display: "inline-flex",
+        flexDirection: "column"
+
       }}
     >
       <h3>{nekiNaslov}</h3>

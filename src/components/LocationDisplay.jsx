@@ -5,8 +5,9 @@ export function LocationDisplay() {
     city: "Zagreb",
     country: "Croatia",
   });
+  // Fragment pisan skračeno se može pisati kao <>...sadrzaj...</>
   return (
-    <div>
+    <>
       <p>
         Grad: {location.city}, Država: {location.country}
       </p>
@@ -17,6 +18,6 @@ export function LocationDisplay() {
       >
         Promijeni Lokaciju
       </button>
-    </div>
+    </>
   );
 }

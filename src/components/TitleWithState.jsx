@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { BlueSubtitle } from "./Titles";
 
 export function TitleWithState() {
   const [content, setContent] = useState("bilo što kao inicijalna vrijednost");
   console.log("TitleWithState se rerenderao", content);
-  return <div>
+  // Fragment nam služi da bi vratili više elemenata iz komponente,
+  // ali nema potrebe za wrapper html elementom (tipa div ili span)
+  return <Fragment>
     <BlueSubtitle title={content} />
     <button
       onClick={() => {
@@ -20,5 +22,5 @@ export function TitleWithState() {
     >
       Postavi tekst 2
     </button>
-  </div>;
+  </Fragment>;
 }
