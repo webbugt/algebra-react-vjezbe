@@ -1,5 +1,5 @@
 import Header from "../components/Header.jsx";
-import KomponentaSaStanjem from "../components/KomponentaSaStanjem.jsx";
+import DashboardParent from "../components/ParentBezStanja.jsx";
 import { FancyTitle } from "../components/Titles.jsx";
 
 export function Onama() {
@@ -11,8 +11,8 @@ export function Onama() {
         subtitle="Hello" 
       />
 
-      <KomponentaSaStanjem id="prva komponenta" nekiNaslov="Neki drugi naslov za Stanje" initialCount={20} />
-      <KomponentaSaStanjem id="matija" nekiNaslov="Naslov iz O nama" initialCount={-50} />
+      <DashboardParent id="prva komponenta" nekiNaslov="Neki drugi naslov za Stanje" initialCount={20} />
+      <DashboardParent id="matija" nekiNaslov="Naslov iz O nama" initialCount={-50} />
     </div>
   );
 }
