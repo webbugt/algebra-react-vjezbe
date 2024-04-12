@@ -23,7 +23,10 @@ export function Counter({ initial }) {
     // })
   };
 
+  const [isTen,setIsTen] = useState(count % 10 === 0)
+
   useEffect(()=>{
+      setIsTen(count % 10 === 0)
       window.localStorage.setItem(COUNTER_KEY,String(count))
     },[count])
 
@@ -33,6 +36,7 @@ export function Counter({ initial }) {
 
   return <div>
     <h2>Stanje brojača: {count}</h2>
+    {isTen && (<h3>Djeljiv s 10!</h3>)}
     <button onClick={addOne}>
       Dodaj 1
     </button>
