@@ -7,7 +7,7 @@ const log = (...rest) => {
 
 const uvijet = true
 
-function LifecycleDemo(){
+function LifecycleDemo({currentEvent}){
 
     log("re-render") // u slučaju tijela funkcije, ono se pokreče svaki puta kada se komponenta rerendera
 
@@ -33,6 +33,13 @@ function LifecycleDemo(){
         }
     },[count])
 
+    useEffect(()=>{
+        log("currentEvent prop changed",currentEvent)
+        
+        return () => {
+            log("destoryFn","currentEvent before change",currentEvent)
+        }
+    },[currentEvent])
 
     if(!uvijet){ 
         // null ne znači da se naša komponenta nije pokrenula
@@ -45,7 +52,7 @@ function LifecycleDemo(){
         setCount(count+1)
     }}>
 
-        demo lifecycle {count}
+        demo lifecycle {count} {currentEvent}
     </h4>
 }
 

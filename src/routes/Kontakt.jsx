@@ -19,7 +19,7 @@ export function Kontakt() {
     <div>
       <Header />
       <GreenTitle title={lastState} />
-      <LifecycleDemo />
+      <LifecycleDemo currentEvent={lastState}/>
       <EventButton onChange={buttonChangeHandler}/>
       <Counter initial={24}/>
     </div>
