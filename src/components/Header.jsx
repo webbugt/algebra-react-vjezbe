@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 const headerLinks = [
   {
     title: "Naslovna",
-    href: "/"
+    href: "/",
   },
   {
     title: "O nama",
-    href: "/onama"
+    href: "/onama",
   },
   {
     title: "Kontakt",
-    href: "/kontakt"
-  },{
+    href: "/kontakt",
+  },
+  {
     title: "Primjeri",
-    href: "/primjeri"
-  }
-]
-
+    href: "/primjeri",
+  },
+];
 
 function Header() {
   return (
@@ -39,13 +39,17 @@ function Header() {
           gap: 14,
           justifyContent: "center",
           padding: 10,
-          background: "white"
+          background: "white",
         }}
       >
-        <Link to="/">Naslovna</Link>
-        <Link to="/onama">O nama</Link>
-        <Link to="/kontakt">Kontakt</Link>
-        <Link to="/primjeri">Primjeri</Link>
+        {headerLinks.map((link) => {
+          const { title, href } = link;
+          return (
+            <Link key={href} to={href}>
+              {title}
+            </Link>
+          );
+        })}
       </header>
     </>
   );
