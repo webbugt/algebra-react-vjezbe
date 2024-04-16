@@ -1,4 +1,4 @@
-import propTypes from "prop-types";
+import { ArticleCard } from "./ArticleCard";
 
 const articles = [
   {
@@ -42,51 +42,32 @@ const articles = [
   {
     id: 23,
     title: "Futurizam u Arhitekturi",
-    description:
-      "Istražujemo kako futurizam oblikuje moderne arhitektonske pothvate",
+    description: 0,
+    //   "Istražujemo kako futurizam oblikuje moderne arhitektonske pothvate",
     slug: "futurizam-u-arhitekturi-90op0p",
-    image: "https://via.assets.so/album.png?id=7&q=95&w=130&h=130&fit=fill"
+    image: "https://via.assets.so/album.png?id=7&q=95&w=130&h=130&fit=fill",
   },
 ];
 
 // const articleMapperArrow = ({id, title}) => <ArticleCard key={id} title={title} />
-
 // function articleMapperFunction(article){
 //     const {id, title} = article
-
 //     return <ArticleCard key={id} title={title} />
 // }
-
-function ArticleCard({ title, imageUrl }) {
-    if(!title || !imageUrl){
-        return null
-    }
-  return (
-    <div className="ArticleCard" style={{
-        display:"flex",
-        gap: 20,
-        margin: 10
-    }}>
-        <img src={imageUrl} className="ArticleCard_image" title={title} alt={title} width="130" height="130" />
-      <h2>{title}</h2>
-    </div>
-  );
-}
-
-ArticleCard.propTypes = {
-  title: propTypes.string.isRequired,
-  imageUrl: propTypes.string.isRequired,
-};
 
 function ArticleCards() {
   return (
     <div className="ArticleCards">
-      {articles.map(({ id, title, image }) => {
-        return <ArticleCard 
-            key={id} 
-            title={title} 
+      {articles.map(({ id, title, image, slug, description }) => {
+        return (
+          <ArticleCard
+            key={id}
+            title={title}
             imageUrl={image}
-        />;
+            description={description}
+            href={`/clanci/${slug}`}
+          />
+        );
       })}
     </div>
   );
