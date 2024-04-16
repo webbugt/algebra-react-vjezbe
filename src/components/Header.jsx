@@ -1,6 +1,25 @@
 // import React from 'react'
 import { Link } from "react-router-dom";
 
+const headerLinks = [
+  {
+    title: "Naslovna",
+    href: "/"
+  },
+  {
+    title: "O nama",
+    href: "/onama"
+  },
+  {
+    title: "Kontakt",
+    href: "/kontakt"
+  },{
+    title: "Primjeri",
+    href: "/primjeri"
+  }
+]
+
+
 function Header() {
   return (
     <>
