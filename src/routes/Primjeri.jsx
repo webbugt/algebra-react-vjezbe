@@ -7,7 +7,9 @@ export function Primjeri() {
     <div>
       <Header />
       <FancyTitle title="Primjeri" />
-      <InteractiveSvg />
+      <InteractiveSvg
+        circles={["#0ff000", "red", "maroon", "magenta", "green", "blue"]}
+      />
     </div>
   );
 }

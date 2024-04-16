@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import propTypes from "prop-types";
 
-function InteractiveSvg() {
+function InteractiveSvg({ circles }) {
   const [svgContent, setSvgContent] = useState("Naš tekst");
 
   const onMouseEnter = () => {
@@ -51,8 +52,27 @@ function InteractiveSvg() {
       >
         Sadrzaj
       </text>
+      {circles.map((color, index) => {
+        return (
+          <circle
+            key={color}
+            cx={100+(20*index)}
+            cy="200"
+            r={50 - index * 5}
+            fill={color}
+          />
+        );
+      })}
     </svg>
   );
 }
+
+InteractiveSvg.propTypes = {
+  circles: propTypes.arrayOf(propTypes.string),
+};
+
+InteractiveSvg.defaultValue = {
+  circles: [],
+};
 
 export default InteractiveSvg;
