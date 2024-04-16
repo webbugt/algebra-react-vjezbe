@@ -1,6 +1,20 @@
+import { useState } from "react";
+
 function InteractiveSvg() {
+  
+  const [svgContent, setSvgContent] = useState("Naš tekst");
+  
   return (
-    <svg height="200" width="350">
+    <svg
+      height="200"
+      width="350"
+      onMouseEnter={() => {
+        setSvgContent("Ušli smo mišem");
+      }}
+      onMouseLeave={() => {
+        setSvgContent("Pozdrav do idući puta!");
+      }}
+    >
       <path
         id="lineAC"
         d="M 30 180 q 150 -250 300 0"
@@ -15,7 +29,7 @@ function InteractiveSvg() {
         }}
       >
         <textPath href="#lineAC" startOffset="80">
-          I love SVG! I love SVG!
+          {svgContent}
         </textPath>
       </text>
     </svg>
