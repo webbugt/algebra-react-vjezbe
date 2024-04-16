@@ -26,6 +26,7 @@ function Header() {
         <Link to="/">Naslovna</Link>
         <Link to="/onama">O nama</Link>
         <Link to="/kontakt">Kontakt</Link>
+        <Link to="/primjeri">Primjeri</Link>
       </header>
     </>
   );

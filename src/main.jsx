@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Onama } from "./routes/Onama.jsx";
 import { Kontakt } from "./routes/Kontakt.jsx";
+import { Primjeri } from "./routes/Primjeri.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     path: "/kontakt",
     element: <Kontakt />,
   },
+  {
+    path: "/primjeri",
+    element: <Primjeri />
+  }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
