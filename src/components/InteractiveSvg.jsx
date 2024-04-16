@@ -1,7 +1,6 @@
 function InteractiveSvg() {
-
   return (
-    <svg height="200" width="350" xmlns="http://www.w3.org/2000/svg">
+    <svg height="200" width="350">
       <path
         id="lineAC"
         d="M 30 180 q 150 -250 300 0"
@@ -9,7 +8,12 @@ function InteractiveSvg() {
         strokeWidth="2"
         fill="none"
       />
-      <text style="fill:red;font-size:25px;">
+      <text
+        style={{
+          fill: "red",
+          fontSize: 25,
+        }}
+      >
         <textPath href="#lineAC" startOffset="80">
           I love SVG! I love SVG!
         </textPath>
@@ -18,4 +22,4 @@ function InteractiveSvg() {
   );
 }
 
-export default InteractiveSvg
+export default InteractiveSvg;
