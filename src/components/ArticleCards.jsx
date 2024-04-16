@@ -37,8 +37,38 @@ const articles = [
     slug: "umjetna-inteligencija-u-medicini-23gh67",
     image: "https://via.assets.so/album.png?id=4&q=95&w=130&h=130&fit=fill",
   },
+  {
+    id: 24,
+    title: "Futurizam u Arhitekturi",
+    description:
+      "Istražujemo kako futurizam oblikuje moderne arhitektonske pothvate",
+    slug: "futurizam-u-arhitekturi-90op0p",
+  },
 ];
 
-function ArticleCards() {}
+
+// const articleMapperArrow = ({id, title}) => <ArticleCard key={id} title={title} />
+
+
+// function articleMapperFunction(article){
+//     const {id, title} = article
+
+//     return <ArticleCard key={id} title={title} />
+// }
+
+function ArticleCard({title}){
+    return <div className="ArticleCard">
+        <h2>{title}</h2>
+    </div>
+}
+
+function ArticleCards() {
+    return <div className="ArticleCards">
+        {/* {articles.map(({id, title}) => <ArticleCard key={id} title={title} />)} */}
+        {articles.map(({id, title}) => {
+            return <ArticleCard key={id} title={title} />
+        })}
+    </div>
+}
 
 export default ArticleCards;
