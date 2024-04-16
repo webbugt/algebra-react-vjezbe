@@ -7,16 +7,12 @@ function InteractiveSvg() {
     setSvgContent("Ušli smo mišem");
   };
 
-  useEffect(
-    function useEffectHandler() {
-      console.log("use effect handler:", svgContent);
-
-      return function destroy() {
-        console.log("use effect destroy", svgContent);
-      };
-    },
-    [svgContent]
-  );
+  useEffect(() => {
+    const svgText = document.querySelector("#svgTekst");
+    if (svgText) {
+      svgText.innerHTML = "novo " + svgContent;
+    }
+  }, [svgContent]);
 
   return (
     <svg
@@ -45,6 +41,7 @@ function InteractiveSvg() {
         </textPath>
       </text>
       <text
+        id="svgTekst"
         x={20}
         y={20}
         style={{
