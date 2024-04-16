@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function InteractiveSvg() {
   const [svgContent, setSvgContent] = useState("Naš tekst");
@@ -6,6 +6,17 @@ function InteractiveSvg() {
   const onMouseEnter = () => {
     setSvgContent("Ušli smo mišem");
   };
+
+  useEffect(
+    function useEffectHandler() {
+      console.log("use effect handler:", svgContent);
+
+      return function destroy() {
+        console.log("use effect destroy", svgContent);
+      };
+    },
+    [svgContent]
+  );
 
   return (
     <svg
@@ -32,6 +43,16 @@ function InteractiveSvg() {
         <textPath href="#lineAC" startOffset="80">
           {svgContent}
         </textPath>
+      </text>
+      <text
+        x={20}
+        y={20}
+        style={{
+          fill: "blue",
+          fontSize: 25,
+        }}
+      >
+        Sadrzaj
       </text>
     </svg>
   );
