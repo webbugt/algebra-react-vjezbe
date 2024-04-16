@@ -45,7 +45,14 @@ function Header() {
         {headerLinks.map((link) => {
           const { title, href } = link;
           return (
-            <Link key={href} to={href}>
+            <Link
+              key={href}
+              to={href}
+              title={title}
+              style={{
+                fontWeight: "bold",
+              }}
+            >
               {title}
             </Link>
           );
