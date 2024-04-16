@@ -1,5 +1,5 @@
 function InteractiveSvg() {
-    
+
   return (
     <svg height="200" width="350" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -17,3 +17,5 @@ function InteractiveSvg() {
     </svg>
   );
 }
+
+export default InteractiveSvg
