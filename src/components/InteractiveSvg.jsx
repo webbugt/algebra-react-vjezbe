@@ -1,19 +1,20 @@
 import { useState } from "react";
 
 function InteractiveSvg() {
-  
   const [svgContent, setSvgContent] = useState("Naš tekst");
-  
+
+  const onMouseEnter = () => {
+    setSvgContent("Ušli smo mišem");
+  };
+
   return (
     <svg
       height="200"
       width="350"
-      onMouseEnter={() => {
-        setSvgContent("Ušli smo mišem");
-      }}
       onMouseLeave={() => {
         setSvgContent("Pozdrav do idući puta!");
       }}
+      onMouseEnter={onMouseEnter}
     >
       <path
         id="lineAC"
