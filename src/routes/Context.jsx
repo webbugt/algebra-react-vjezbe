@@ -49,16 +49,15 @@ export function ContextPage() {
       <NameContext.Provider value="Peter">
         <ContextExample1 />
         <br />
-        <ContextExample2 />
-      </NameContext.Provider>
-      <br />
+        <NameContext.Provider value="Mary">
+          <ContextExample2 />
+          <br />
+          <ContextExample3 />
+        </NameContext.Provider>
 
-      <NameContext.Provider value="Jane">
-        <ContextExample3 />
         <br />
         <ContextExample4 />
       </NameContext.Provider>
-      
     </div>
   );
 }
