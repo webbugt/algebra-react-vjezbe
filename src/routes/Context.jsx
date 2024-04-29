@@ -30,10 +30,10 @@ function ContextExample2() {
 
 function ContextExample1() {
   return (
-    <p>
+    <div style={{marginTop: 20}}>
       Component 1:
       <ContextExample2 />
-    </p>
+    </div>
   );
 }
 
