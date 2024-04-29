@@ -6,7 +6,11 @@ export function Forme() {
     <div>
       <Header />
       <FancyTitle title="Forme" />
-      Bilo šta novo, eto forme
+      <form>
+        <label htmlFor="name">Ime</label>
+        <input name="name" type="text" />
+        <button type="submit">Pošalji</button>
+      </form>
     </div>
   );
 }
