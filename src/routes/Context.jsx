@@ -1,22 +1,40 @@
+import { createContext, useContext } from "react";
 import Header from "../components/Header.jsx";
 import { PropDrillKomponenta1 } from "../components/PropDrillExample.jsx";
 import { FancyTitle } from "../components/Titles.jsx";
 
-function ContextExample4 (){
-  return <p>Hello from context example, context value:</p>
+const NameContext = createContext("John");
+
+function ContextExample4() {
+  const nameContextValue = useContext(NameContext);
+  return <div>Hello from context example, context value: {nameContextValue}</div>;
 }
 
-function ContextExample3(){
-  return <ContextExample4 />
+function ContextExample3() {
+  return (
+    <div>
+      Component 3:
+      <ContextExample4 />
+    </div>
+  );
 }
 
-function ContextExample2(){
-  return <ContextExample3 />
+function ContextExample2() {
+  return (
+    <div>
+      Component 2:
+      <ContextExample3 />
+    </div>
+  );
 }
 
-
-function ContextExample1(){
-  return <ContextExample2 />
+function ContextExample1() {
+  return (
+    <p>
+      Component 1:
+      <ContextExample2 />
+    </p>
+  );
 }
 
 export function ContextPage() {
