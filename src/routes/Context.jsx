@@ -7,7 +7,9 @@ const NameContext = createContext("John");
 
 function ContextExample4() {
   const nameContextValue = useContext(NameContext);
-  return <div>Hello from context example, context value: {nameContextValue}</div>;
+  return (
+    <div>Hello from context example, context value: {nameContextValue}</div>
+  );
 }
 
 function ContextExample3() {
@@ -30,7 +32,7 @@ function ContextExample2() {
 
 function ContextExample1() {
   return (
-    <div style={{marginTop: 20}}>
+    <div style={{ marginTop: 20 }}>
       Component 1:
       <ContextExample2 />
     </div>
@@ -43,7 +45,20 @@ export function ContextPage() {
       <Header />
       <FancyTitle title="Context Page" />
       <PropDrillKomponenta1 />
-      <ContextExample1 />
+
+      <NameContext.Provider value="Peter">
+        <ContextExample1 />
+        <br />
+        <ContextExample2 />
+      </NameContext.Provider>
+      <br />
+
+      <NameContext.Provider value="Jane">
+        <ContextExample3 />
+        <br />
+        <ContextExample4 />
+      </NameContext.Provider>
+      
     </div>
   );
 }
