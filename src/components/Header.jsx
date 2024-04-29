@@ -21,6 +21,10 @@ const headerLinks = [
   {
     title: "Forme",
     href: "/forme"
+  },
+  {
+    title: "Context",
+    href: "/context"
   }
 ];
 
@@ -40,6 +44,7 @@ function Header() {
           left: 0,
           width: "100%",
           display: "flex",
+          flexWrap: "wrap",
           gap: 14,
           justifyContent: "center",
           padding: 10,
