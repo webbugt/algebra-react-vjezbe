@@ -36,11 +36,15 @@ export function NameForm() {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    const nameValue = nameInputRef.current.value;
-    const checkboxValue = checkboxInputRef.current.checked
+    let nameValue = nameInputRef.current.value;
+    const areNumbersAllowed = checkboxInputRef.current.checked;
+
+    if(!areNumbersAllowed){
+      nameValue = nameValue.replace(/\d/gi, "")
+    }
 
     setName(nameValue);
-    setNumbersAllowed(checkboxValue);
+    setNumbersAllowed(areNumbersAllowed);
   };
 
   return (
@@ -48,14 +52,16 @@ export function NameForm() {
       <h3>On Submit</h3>
       <label htmlFor="name">Ime</label>
       <input ref={nameInputRef} name="name" type="text" />
-      <br/>
+      <br />
       <label htmlFor="allowNumbers">Dopusti brojeve</label>
       <input ref={checkboxInputRef} type="checkbox" name="allowNumbers" />
-      <br/>
+      <br />
       <button type="submit">Pošalji</button>
-      <br/>
+      <br />
       <pre>
-        Trenutna vrijednost: {name}; Brojevi dopušteni: {numbersAllowed?"da":"ne"}</pre>
+        Trenutna vrijednost: {name}; Brojevi dopušteni:{" "}
+        {numbersAllowed ? "da" : "ne"}
+      </pre>
     </form>
   );
 }
