@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export function ControlledNameInput() {
   const [name, setName] = useState("Pero");
@@ -28,11 +28,12 @@ export function ControlledNameInput() {
 export function NameForm() {
   const [name, setName] = useState("Pero");
 
+  const nameInputRef = useRef(null)
+
   const onSubmitHandler = (event)=>{
       event.preventDefault()
-
-      const formElement = event.target
-      const nameValue = formElement.name.value
+      
+      const nameValue = nameInputRef.current.value
 
       setName(nameValue)
     }
@@ -42,6 +43,7 @@ export function NameForm() {
       <h3>On Submit</h3>
       <label htmlFor="name">Ime</label>
       <input
+        ref={nameInputRef}
         name="name"
         type="text" 
       />
