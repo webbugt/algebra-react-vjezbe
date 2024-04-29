@@ -18,6 +18,10 @@ const headerLinks = [
     title: "Primjeri",
     href: "/primjeri",
   },
+  {
+    title: "Forme",
+    href: "/forme"
+  }
 ];
 
 function Header() {

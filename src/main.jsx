@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Onama } from "./routes/Onama.jsx";
 import { Kontakt } from "./routes/Kontakt.jsx";
 import { Primjeri } from "./routes/Primjeri.jsx";
+import { Forme } from "./routes/Forme.jsx";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/primjeri",
     element: <Primjeri />
+  },
+  {
+    path: "/forme",
+    element: <Forme /> 
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
