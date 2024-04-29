@@ -1,4 +1,4 @@
-import { FunctionalNameForm } from "../components/forme/FunctionalNameForm.jsx";
+import { ControlledNameInput, NameForm } from "../components/forme/FunctionalNameForm.jsx";
 import Header from "../components/Header.jsx";
 import { FancyTitle } from "../components/Titles.jsx";
 
@@ -7,7 +7,8 @@ export function Forme() {
     <div>
       <Header />
       <FancyTitle title="Forme" />
-      <FunctionalNameForm />
+      <ControlledNameInput />
+      <NameForm />
     </div>
   );
 }
