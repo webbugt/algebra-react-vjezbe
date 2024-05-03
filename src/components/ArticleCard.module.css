@@ -1,5 +1,13 @@
-.ArticleCard {
+.card {
     background-color: red;
+}
+
+.title {
+    background-color: magenta;
+}
+
+.article-card-yellow {
+    background-color: yellow;
 }
 
 /* možemo utjecati na bilo koji element unutar aplikacije */

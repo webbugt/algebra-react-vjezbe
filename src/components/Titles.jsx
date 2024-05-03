@@ -1,14 +1,14 @@
 import propTypes from 'prop-types'
 import withColor from '../hoc/withColor';
+import style from "./Titles.module.css"
+import clsx from "clsx"
 
 
 function Title({className, title, color}){
   return (
     <h1
-      className={className}
+      className={clsx(className, style.title)}
       style={{
-        textDecoration: "underline",
-        fontWeight: "bold",
         color,
         background: "yellow",
       }}

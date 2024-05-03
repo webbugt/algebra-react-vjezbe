@@ -7,7 +7,7 @@ export function Primjeri() {
   return (
     <div>
       <Header />
-      <YellowTitle title="Primjeri" />
+      <YellowTitle title="Primjeri" className="PrimjeriPage_title" />
       <ArticleCards />
       <InteractiveSvg
         circles={["#0ff000", "red", "maroon", "magenta", "green", "blue"]}

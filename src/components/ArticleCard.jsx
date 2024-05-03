@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "../card.css"
+import style from "./ArticleCard.module.css"
 
 export function ArticleCard({ title, imageUrl, href, description }) {
     if (!title || !imageUrl || !href) {
@@ -9,7 +9,7 @@ export function ArticleCard({ title, imageUrl, href, description }) {
     return (
         <Link
             to={href}
-            className="ArticleCard"
+            className={style.card}
             style={{
                 display: "flex",
                 gap: 20,
@@ -33,7 +33,7 @@ export function ArticleCard({ title, imageUrl, href, description }) {
                     justifyContent: "center",
                 }}
             >
-                <h2 className="ArticleCard_title">{title}</h2>
+                <h2 className={style.title}>{title}</h2>
                 {!!description && (
                     <p className="ArticleCard_description">{description}</p>
                 )}
