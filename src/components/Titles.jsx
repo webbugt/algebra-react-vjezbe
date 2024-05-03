@@ -71,24 +71,25 @@ BlueSubtitle.defaultProps = {
   className: undefined
 }
 
+const GreenSubtitle = withColor(Subtitle, "green")
 
-function GreenSubtitle({ title, className }) {
+function GreenSubtitleOld({ title, className }) {
   console.log(`GreenSubtitle rerendered ${title}`)
   return (
     <Subtitle title={title} className={className} color="green" />
   );
 }
 
-GreenSubtitle.propTypes = {
+GreenSubtitleOld.propTypes = {
   title: propTypes.string.isRequired,
   className: propTypes.string
 }
 
-GreenSubtitle.defaultProps = {
+GreenSubtitleOld.defaultProps = {
   className: undefined
 }
 
-export const MagentaSubtitle = withColor(Subtitle)
+export const MagentaSubtitle = withColor(Subtitle, "magenta")
 
 function FancyTitle({title,subtitle}){
   
