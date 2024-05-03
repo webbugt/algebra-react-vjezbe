@@ -7,18 +7,35 @@ const plaviStil = {
   fontWeight: "bold",
 };
 
-function GreenTitle({ className, title = "Zeleni naslov" }) {
+function Title({className, title, color}){
   return (
     <h1
       className={className}
       style={{
-        ...plaviStil,
-        color: "green",
+        textDecoration: "underline",
+        fontWeight: "bold",
+        color,
         background: "yellow",
       }}
     >
       {title.toString()}
     </h1>
+  );
+}
+
+Title.propTypes={
+  title: propTypes.string.isRequired,
+  className: propTypes.string,
+  color: propTypes.string
+}
+
+Title.defaultProps={
+  className: undefined,
+  color: undefined
+}
+function GreenTitle({ className, title = "Zeleni naslov" }) {
+  return (
+    <Title title={title} className={className} color="darkgreen"/>
   );
 }
 
