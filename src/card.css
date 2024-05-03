@@ -1,0 +1,8 @@
+.ArticleCard {
+    background-color: red;
+}
+
+/* možemo utjecati na bilo koji element unutar aplikacije */
+svg {
+    background-color: magenta
+}

@@ -1,5 +1,6 @@
 import propTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "../card.css"
 
 export function ArticleCard({ title, imageUrl, href, description }) {
     if (!title || !imageUrl || !href) {
