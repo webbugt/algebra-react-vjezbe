@@ -1,4 +1,5 @@
 import propTypes from 'prop-types'
+import withColor from '../hoc/withColor';
 
 const plaviStil = {
   color: "blue",
@@ -86,6 +87,8 @@ GreenSubtitle.propTypes = {
 GreenSubtitle.defaultProps = {
   className: undefined
 }
+
+export const MagentaSubtitle = withColor(Subtitle)
 
 function FancyTitle({title,subtitle}){
   
