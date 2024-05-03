@@ -31,6 +31,28 @@ GreenTitle.defaultProps = {
   title: "Default title"
 }
 
+function Subtitle({title,className,color}){
+  return (
+    <h2 className={className} style={{
+      color,
+      textDecoration: "underline",
+      fontWeight: "bold"
+    }}>
+      {title}
+    </h2>
+  );
+}
+
+Subtitle.propTypes={
+  title: propTypes.string.isRequired,
+  className: propTypes.string,
+  color: propTypes.string
+}
+
+Subtitle.defaultProps={
+  className: undefined,
+  color: undefined
+}
 
 function BlueSubtitle({ title, className }) {
   console.log(`BlueSubtitle rerendered ${title}`)
