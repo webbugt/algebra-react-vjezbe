@@ -31,6 +31,11 @@ Title.defaultProps={
 
 const GreenTitle = withColor(Title,"green")
 
+
+export const RedTitle = withColor(Title, "#550000")
+
+export const YellowTitle = withColor(Title, "#999900")
+
 function Subtitle({title,className,color}){
   return (
     <h2 className={className} style={{
