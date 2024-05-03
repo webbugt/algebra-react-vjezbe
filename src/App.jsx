@@ -1,7 +1,7 @@
 import Calculation from "./components/Calculation";
 import Header from "./components/Header";
 import CatImage from "./components/image/CatImage";
-import { BlueSubtitle, GreenTitle } from "./components/Titles";
+import { BlueSubtitle, GreenSubtitle, GreenTitle } from "./components/Titles";
 import {Counter} from './components/Counter'
 // funkcionalna komponenta
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <GreenTitle title="Vrijednost iz parent komponente"/>
       <br />
-      <BlueSubtitle title="I'm blue dabudedadbabdab" />
+      <GreenSubtitle title="I'm blue dabudedadbabdab" />
       <BlueSubtitle title="mora biti prisutan" />
 
       <CatImage className="maca1" />
