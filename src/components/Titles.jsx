@@ -33,21 +33,8 @@ Title.defaultProps={
   className: undefined,
   color: undefined
 }
-function GreenTitle({ className, title = "Zeleni naslov" }) {
-  return (
-    <Title title={title} className={className} color="darkgreen"/>
-  );
-}
 
-GreenTitle.propTypes = {
-  className: propTypes.string,
-  title: propTypes.string
-}
-
-GreenTitle.defaultProps = {
-  className: undefined,
-  title: "Default title"
-}
+const GreenTitle = withColor(Title,"green")
 
 function Subtitle({title,className,color}){
   return (
