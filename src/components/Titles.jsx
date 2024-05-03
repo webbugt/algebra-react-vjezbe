@@ -1,11 +1,6 @@
 import propTypes from 'prop-types'
 import withColor from '../hoc/withColor';
 
-const plaviStil = {
-  color: "blue",
-  textDecoration: "underline",
-  fontWeight: "bold",
-};
 
 function Title({className, title, color}){
   return (
