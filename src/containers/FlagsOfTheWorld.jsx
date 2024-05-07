@@ -1,8 +1,15 @@
-import { useAxiosGet } from "../hooks/useAxiosGet"
-export function FlagsOfTheWorld () {
-  const {data, isError, isLoading} = useAxiosGet("https://restcountries.com/v2/all")
+import axios from "axios"
+import useSWR from "swr"
 
-  if(isError){
+const fetcher = (...args) => axios.get(...args).then(response=>response.data)
+
+export function FlagsOfTheWorld () {
+  const {data, error, isLoading} = useSWR(
+    "https://restcountries.com/v2/all",
+    fetcher
+    )
+
+  if(error){
     return "ERROR!"
   }
 
