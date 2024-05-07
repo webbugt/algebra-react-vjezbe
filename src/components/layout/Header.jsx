@@ -25,6 +25,10 @@ const headerLinks = [
   {
     title: "Context",
     href: "/context"
+  },
+  {
+    title: "Flags",
+    href: "/flags"
   }
 ];
 

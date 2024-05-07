@@ -8,6 +8,7 @@ import { Kontakt } from "./routes/Kontakt.jsx";
 import { Primjeri } from "./routes/Primjeri.jsx";
 import { Forme } from "./routes/Forme.jsx";
 import { ContextPage } from "./routes/Context.jsx";
+import { Flags } from "./routes/Flags.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/context",
     element: <ContextPage /> 
+  },
+  {
+    path: "/flags",
+    element: <Flags />
   }
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
