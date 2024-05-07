@@ -1,8 +1,8 @@
 import Calculation from "./components/Calculation";
-import Header from "./components/Header";
-import CatImage from "./components/image/CatImage";
+import Header from "./components/layout/Header";
+import CatImage from "./components/CatImage";
 import { BlueSubtitle, GreenSubtitle, GreenTitle, MagentaSubtitle, RedSubtitle } from "./components/Titles";
-import {Counter} from './components/Counter'
+import {Counter} from './containers/Counter'
 // funkcionalna komponenta
 function App() {
   console.log("App render")

@@ -1,5 +1,5 @@
-import Header from "../components/Header.jsx";
-import DashboardParent from "../components/ParentBezStanja.jsx";
+import Header from "../components/layout/Header.jsx";
+import DashboardParent from "../containers/ParentBezStanja.jsx";
 import { FancyTitle } from "../components/Titles.jsx";
 
 export function Onama() {

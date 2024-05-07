@@ -1,10 +1,10 @@
 
 import { useState } from "react";
-import EventButton from "../components/EventButton.jsx";
-import Header from "../components/Header.jsx";
+import EventButton from "../examples/EventButton.jsx";
+import Header from "../components/layout/Header.jsx";
 import { RedTitle } from "../components/Titles.jsx";
-import LifecycleDemo from "../components/LifecycleDemo.jsx";
-import { Counter } from "../components/Counter.jsx";
+import LifecycleDemo from "../examples/LifecycleDemo.jsx";
+import { Counter } from "../containers/Counter.jsx";
 
 export function Kontakt() {
 

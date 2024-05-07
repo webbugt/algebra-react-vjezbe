@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import { BlueSubtitle } from "./Titles";
+import { BlueSubtitle } from "../components/Titles";
 
 export function TitleWithState() {
   const [content, setContent] = useState("bilo što kao inicijalna vrijednost");

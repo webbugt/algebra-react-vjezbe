@@ -1,5 +1,5 @@
-import { ControlledNameInput, NameForm } from "../components/forme/FunctionalNameForm.jsx";
-import Header from "../components/Header.jsx";
+import { ControlledNameInput, NameForm } from "../containers/forme/FunctionalNameForm.jsx";
+import Header from "../components/layout/Header.jsx";
 import { FancyTitle } from "../components/Titles.jsx";
 
 export function Forme() {

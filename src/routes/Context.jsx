@@ -3,9 +3,9 @@ import {
   ContextExample2,
   ContextExample3,
   ContextExample4,
-} from "../components/ContextExample.jsx";
-import Header from "../components/Header.jsx";
-import { PropDrillKomponenta1 } from "../components/PropDrillExample.jsx";
+} from "../examples/ContextExample.jsx";
+import Header from "../components/layout/Header.jsx";
+import { PropDrillKomponenta1 } from "../examples/PropDrillExample.jsx";
 import { FancyTitle } from "../components/Titles.jsx";
 import { NameContextProvider } from "../context/Name.context.jsx";
 
