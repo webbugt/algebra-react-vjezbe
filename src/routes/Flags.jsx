@@ -3,16 +3,28 @@ import axios from "axios";
 import Header from "../components/layout/Header.jsx";
 import { useEffect, useState } from "react";
 
-
-function FlagsOfTheWorld () {
+// custom hook
+function useCountryData(){
   const [countries,setCountries] = useState(null)
+  const [isError,setIsError] = useState(false)
 
   useEffect(()=>{
     axios.get("https://restcountries.com/v2/all")
-    .then(({data})=>setCountries(data))
+    .then(({data})=>setCountries(data)).catch(()=>{
+      setIsError(true)
+    })
   },[])
+  return {countries, isError, isLoading: countries===null}
+}
 
-  if(countries === null){
+function FlagsOfTheWorld () {
+  const {countries, isError, isLoading} = useCountryData()
+
+  if(isError){
+    return "ERROR!"
+  }
+
+  if(isLoading){
     return "Loading"
   }
 
