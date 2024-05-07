@@ -1,7 +1,8 @@
 
 import Header from "../components/layout/Header.jsx";
 
-export function Flags() {
+
+export function FlagsPage() {
   return (
     <div>
       <Header />
