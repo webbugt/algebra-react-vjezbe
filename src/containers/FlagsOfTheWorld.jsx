@@ -1,7 +1,6 @@
-import { useCountryData } from "../hooks/useCountryData"
-
+import { useAxiosGet } from "../hooks/useAxiosGet"
 export function FlagsOfTheWorld () {
-  const {countries, isError, isLoading} = useCountryData()
+  const {data, isError, isLoading} = useAxiosGet("https://restcountries.com/v2/all")
 
   if(isError){
     return "ERROR!"
@@ -12,7 +11,7 @@ export function FlagsOfTheWorld () {
   }
 
   return <div className="w-[100vw] flex flex-row flex-wrap gap-2">
-    {countries.map(country=>{
+    {data.map(country=>{
       const {name, flag, numericCode} = country
       return <img className="w-20" key={name+numericCode} src={flag} alt={name} title={name}/>
     })}
