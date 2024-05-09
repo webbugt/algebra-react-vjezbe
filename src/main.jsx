@@ -9,6 +9,8 @@ import { Primjeri } from "./routes/Primjeri.jsx";
 import { Forme } from "./routes/Forme.jsx";
 import { ContextPage } from "./routes/Context.jsx";
 import { FlagsPage } from "./routes/Flags.jsx";
+import { store } from "./store";
+import { Provider } from 'react-redux'
 
 const router = createBrowserRouter([
   {
@@ -42,6 +44,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
