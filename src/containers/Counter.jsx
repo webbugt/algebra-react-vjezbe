@@ -5,7 +5,7 @@ const COUNTER_KEY = "counter-value"
 
 const useCounterState = (initial, localStorageKey) => {
   const [count, setCount] = useState(()=>{
-    const localStorageValue = window.localStorage.getItem(COUNTER_KEY)
+    const localStorageValue = window.localStorage.getItem(localStorageKey)
     if(localStorageValue !== null){
       return parseInt(localStorageValue)
     }
