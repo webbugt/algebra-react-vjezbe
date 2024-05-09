@@ -11,6 +11,7 @@ const getLocalStorageValue = () => {
 
 const initialState = {
   value: getLocalStorageValue(),
+  lastChange: "none",
 };
 
 export const counterSlice = createSlice({
@@ -18,13 +19,18 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
-      state.value += 1
+      state.value += 1;
+      state.lastChange = "increment";
     },
     decrement: (state) => {
-      state.value-=1
+      state.value -= 1;
+      state.lastChange = "decrement";
     },
     setCounter: (state, action) => {
-      state.value=action.payload
+      const previousValue = state.value;
+      const newValue = action.payload;
+      state.lastChange = newValue < previousValue?"set lower":"set higher"
+      state.value = action.payload;
     },
   },
 });

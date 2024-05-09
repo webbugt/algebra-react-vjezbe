@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 
 
 const countSelector = (state) => state.counter.value;
+const lastCounterChangeSelector = (state) => state.counter.lastChange;
 function ShowCount (){
   const count = useSelector(countSelector)
+  const lastChange = useSelector(lastCounterChangeSelector)
 
-  return <b style={{fontSize: 80}}>{count}</b>
+  return <b style={{fontSize: 80}}>{count} <small style={{fontSize:20}}>{lastChange}</small></b>
 }
 
 

@@ -1,6 +1,6 @@
 import propTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement } from "../store/counterSlice";
+import { increment, decrement, setCounter } from "../store/counterSlice";
 
 // const COUNTER_KEY = "counter-value";
 
@@ -25,6 +25,12 @@ export function Counter({ initial }) {
       </h2>
       <button onClick={addOne}>Dodaj 1</button>
       <button onClick={reduceOne}>Oduzmi 1</button>
+      <button onClick={()=>{
+        dispatch(setCounter(-10))
+      }}>Postavi -10</button>
+      <button onClick={()=>{
+        dispatch(setCounter(10))
+      }}>Postavi 10</button>
     </div>
   );
 }
