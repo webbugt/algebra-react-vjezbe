@@ -4,11 +4,10 @@ import { FancyTitle } from "../components/Titles.jsx";
 import { useSelector } from "react-redux";
 
 
-const countSelector = (state) => state.counter.value;
-const lastCounterChangeSelector = (state) => state.counter.lastChange;
+const counterStateSelector = (state) => state.counter
 function ShowCount (){
-  const count = useSelector(countSelector)
-  const lastChange = useSelector(lastCounterChangeSelector)
+  const {value: count, lastChange} = useSelector(counterStateSelector)
+
 
   return <b style={{fontSize: 80}}>{count} <small style={{fontSize:20}}>{lastChange}</small></b>
 }
