@@ -10,7 +10,9 @@ import { Forme } from "./routes/Forme.jsx";
 import { ContextPage } from "./routes/Context.jsx";
 import { FlagsPage } from "./routes/Flags.jsx";
 import { store } from "./store";
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
+
+import { ConnectLocalStorageToRedux } from "./store/connectors/ConnectLocalStorageToRedux.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,24 +29,26 @@ const router = createBrowserRouter([
   },
   {
     path: "/primjeri",
-    element: <Primjeri />
+    element: <Primjeri />,
   },
   {
     path: "/forme",
-    element: <Forme /> 
+    element: <Forme />,
   },
   {
     path: "/context",
-    element: <ContextPage /> 
+    element: <ContextPage />,
   },
   {
     path: "/flags",
-    element: <FlagsPage />
-  }
+    element: <FlagsPage />,
+  },
 ]);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
+      <ConnectLocalStorageToRedux />
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
