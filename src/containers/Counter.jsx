@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 
 const COUNTER_KEY = "counter-value"
 
-export function Counter({ initial }) {
+const useCounterState = (initial, localStorageKey) => {
   const [count, setCount] = useState(()=>{
     const localStorageValue = window.localStorage.getItem(COUNTER_KEY)
     if(localStorageValue !== null){
@@ -23,20 +23,24 @@ export function Counter({ initial }) {
     // })
   };
 
-  const [isTen,setIsTen] = useState(count % 10 === 0)
 
   useEffect(()=>{
-      setIsTen(count % 10 === 0)
-      window.localStorage.setItem(COUNTER_KEY,String(count))
-    },[count])
+    window.localStorage.setItem(localStorageKey,String(count))
+  },[count, localStorageKey])
 
   const removeOne = () => {
     setCount(previousValue => previousValue - 1);
   };
 
+
+  return [count,addOne,removeOne]
+}
+
+export function Counter({ initial }) {
+  const [count, addOne, removeOne] = useCounterState(initial, COUNTER_KEY)
+  
   return <div>
     <h2>Stanje brojača: {count}</h2>
-    {isTen && (<h3>Djeljiv s 10!</h3>)}
     <button onClick={addOne}>
       Dodaj 1
     </button>
